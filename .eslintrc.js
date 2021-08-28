@@ -7,7 +7,8 @@ module.exports = {
   extends: [
     'plugin:vue/essential',
     'airbnb-base',
-    'plugin:prettier/recommended' // 添加 prettier 插件
+    'plugin:prettier/recommended',
+    'plugin:jest/recommended'
   ],
   parserOptions: {
     ecmaVersion: 12,
@@ -15,5 +16,19 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['vue', '@typescript-eslint'],
-  rules: {}
+  rules: {
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'import/no-absolute-path': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'vue/no-multiple-template-root': 'off',
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: ['state', 'config']
+      }
+    ]
+  },
+  settings: {}
 }
