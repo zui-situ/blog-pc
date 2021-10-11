@@ -1,0 +1,272 @@
+// base color
+$blue:#324157;
+$light-blue:#40a9ff;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+$muted:#888888;
+$background-color:#effbff;
+// 分割线颜色
+$line-color: #dcdfe6;
+$base-bgc: #F7F7F7;
+$light-text: #8590a6;
+
+
+// sidebar
+$menuText:#bfcbd9;
+$menuActiveText:#409EFF;
+$subMenuActiveText:#f4f4f5; // https://github.com/ElemeFE/element/issues/12951
+
+$menuBg:#304156;
+$menuHover:#263445;
+$sidebarTitle: #ffffff;
+
+$menuLightBg:#ffffff;
+$menuLightHover:#f0f1f5;
+$sidebarLightTitle: #001529;
+
+$subMenuBg:#1f2d3d;
+$subMenuHover:#001528;
+
+$sideBarWidth: 200px;
+$topNavWidth: 50px;
+
+// scss 函数
+//文字
+@mixin font-style($color, $fongsize) {
+    color: $color;
+    font-size: $fongsize;
+  }
+
+  // 文字省略显示
+  @mixin ellipsis($line:2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  //盒子模型兼容性
+  $border-box:border-box;
+
+  @mixin box-sizing($border-box) {
+    box-sizing: $border-box;
+    -o-box-sizing: $border-box;
+    -ms-box-sizing: $border-box;
+    -moz-box-sizing: $border-box;
+    -webkit-box-sizing: $border-box;
+  }
+
+  //圆角兼容性
+  @mixin border-radius($x, $y:$x) {
+    border-radius: $x $y;
+    -o-border-radius: $x $y;
+    -ms-border-radius: $x $y;
+    -moz-border-radius: $x $y;
+    -webkit-border-radius: $x $y;
+  }
+
+  //长、宽
+  @mixin wh($width, $height:$width) {
+    width: $width;
+    height: $height;
+  }
+
+  //flex布局
+  @mixin df {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+  }
+
+  @mixin flex($flex:1) {
+    -webkit-flex: $flex;
+    -moz-flex: $flex;
+    flex: $flex;
+  }
+
+  @mixin fac {
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+  }
+
+  //flex 布局和 子元素 对其方式
+  @mixin faj($atype: stretch, $jtype: stretch) {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+
+    -webkit-align-items: $atype;
+    -moz-align-items: $atype;
+    align-items: $atype;
+
+    -webkit-justify-content: $jtype;
+    -moz-justify-content: $jtype;
+    justify-content: $jtype;
+  }
+
+  //flex 布局 主轴从上到下 和 子元素 对其方式
+  @mixin fcaj($atype: stretch, $jtype: stretch) {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-align-items: $atype;
+    -moz-align-items: $atype;
+    align-items: $atype;
+
+    -webkit-justify-content: $jtype;
+    -moz-justify-content: $jtype;
+    justify-content: $jtype;
+  }
+
+
+  //定位
+  //absolute
+  @mixin pos-ab-lt($left, $top) {
+    position: absolute;
+    left: $left;
+    top: $top;
+  }
+
+  @mixin pos-ab-rb($right, $bottom) {
+    position: absolute;
+    right: $right;
+    bottom: $bottom;
+  }
+
+  //fixed
+  @mixin pos-fixed-lt($left, $top) {
+    position: fixed;
+    left: $left;
+    top: $top;
+  }
+
+  @mixin pos-fixed-rb($right, $bottom) {
+    position: fixed;
+    right: $right;
+    bottom: $bottom;
+  }
+
+  //定位上下左右居中
+  @mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  //定位上下居中
+  @mixin ct {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  //定位左右居中
+  @mixin cl {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // 边框
+  @mixin b($size: 1px, $color: $line-color) {
+    border: $size solid $color;
+  }
+
+  @mixin bt($size: 1px, $color: $line-color) {
+    border-top: $size solid $color;
+  }
+
+  @mixin br($size: 1px, $color: $line-color) {
+    border-right: $size solid $color;
+  }
+
+  @mixin bb($size: 1px, $color: $line-color) {
+    border-bottom: $size solid $color;
+  }
+
+  @mixin bl($size: 1px, $color: $line-color) {
+    border-left: $size solid $color;
+  }
+
+
+  @mixin clearfix {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  @mixin scrollBar {
+    &::-webkit-scrollbar-track-piece {
+      background: #d3dce6;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #99a9bf;
+      border-radius: 20px;
+    }
+  }
+
+  @mixin relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  // display
+  @mixin flex($direction: column, $align: center, $content: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $content;
+  }
+
+  //border
+  @mixin bt($width: 1px, $color: #dcdcdc) {
+    border-bottom: solid $width $color;
+  }
+
+  // 文字省略显示
+  @mixin ellipsis($line:2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  menuLightBg: $menuLightBg;
+  menuLightHover: $menuLightHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+  sidebarTitle: $sidebarTitle;
+  sidebarLightTitle: $sidebarLightTitle;
+  topNavWidth: $topNavWidth;
+  lightTextColor:$light-text;
+}
