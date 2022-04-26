@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'iconfont';  /* Project id 3243523 */
+  src: url('//at.alicdn.com/t/font_3243523_b3y35cnj4ku.woff2?t=1650726951292') format('woff2'),
+       url('//at.alicdn.com/t/font_3243523_b3y35cnj4ku.woff?t=1650726951292') format('woff'),
+       url('//at.alicdn.com/t/font_3243523_b3y35cnj4ku.ttf?t=1650726951292') format('truetype');
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-html:before {
+  content: '\e600';
+}
+
+.icon-home:before {
+  content: '\e601';
+}
+
+.icon-vue:before {
+  content: '\f25f';
+}
+
+.icon-server:before {
+  content: '\e62a';
+}
+
+.icon-css:before {
+  content: '\e6e6';
+}
+
+.icon-js:before {
+  content: '\e6f7';
+}
+
+.icon-nodejs:before {
+  content: '\e703';
+}
+
+.icon-history:before {
+  content: '\e6c8';
+}
+
+.icon-mongoDB:before {
+  content: '\e66d';
+}
+
+.icon-project:before {
+  content: '\e614';
+}
+
+.icon-search:before {
+  content: '\eafe';
+}
+
+.icon-ts:before {
+  content: '\ecef';
+}
+
+.icon-nestjs:before {
+  content: '\e67d';
+}
+
+.icon-websocket:before {
+  content: '\e608';
+}
+
+.icon-date:before {
+  content: '\e697';
+}
+
+.icon-date-fill:before {
+  content: '\e65e';
+}
+
+.icon-eye:before {
+  content: '\e689';
+}
+
+.icon-down:before {
+  content: '\e624';
+}
+
+.icon-web:before {
+  content: '\e61c';
+}

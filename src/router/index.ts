@@ -1,33 +1,60 @@
-import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router'
-// import Home from '@/views/Home.vue'
-import Vuex from '@/views/Vuex.vue'
-import Test from '@/views/Test.vue'
+import { createRouter, Router, RouteRecordRaw, createWebHistory } from 'vue-router'
+
+export enum RouteName {
+  Home = 'home',
+  ArticleDetail = 'article-detail',
+  Tag = 'tag-list',
+  Category = 'category-list',
+  Search = 'Search-list'
+}
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: import('@/views/home/index.vue')
+    name: RouteName.Home,
+    component: import('@/views/index/index.vue')
   },
   {
-    path: '/vuex',
-    name: 'Vuex',
-    component: Vuex
+    path: '/article/:id',
+    name: RouteName.ArticleDetail,
+    component: import('@/views/articleDetail/index.vue')
   },
   {
-    path: '/axios',
-    name: 'Axios',
-    component: () => import('@/views/Axios.vue') // 懒加载 Axios 组件
+    path: '/tag/:tag_name',
+    name: RouteName.Tag,
+    props(to) {
+      return {
+        tagName: to.params.tag_name
+      }
+    },
+    component: import('@/views/tag/index.vue')
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: Test
+    path: '/category/:category_code',
+    name: RouteName.Category,
+    props(to) {
+      return {
+        categoryCode: to.params.category_code
+      }
+    },
+    component: import('@/views/category/index.vue')
+  },
+  {
+    path: '/search/:keyword',
+    name: RouteName.Search,
+    props(to) {
+      return {
+        keyword: to.params.keyword
+      }
+    },
+    component: import('@/views/search/index.vue')
   }
 ]
+
 const router: Router = createRouter({
-  history: createWebHashHistory(),
-  routes
+  history: createWebHistory(),
+  routes,
+  linkActiveClass: 'link-active'
 })
 
 router.beforeEach((to, from, next) => {

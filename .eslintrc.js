@@ -22,11 +22,16 @@ module.exports = {
     'import/no-absolute-path': 'off',
     'import/no-extraneous-dependencies': 'off',
     'vue/no-multiple-template-root': 'off',
+    'no-underscore-dangle': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'off',
+    'vue/no-template-shadow': 'off',
+    'no-unused-vars': 'off',
     'no-param-reassign': [
       'error',
       {
         props: true,
-        ignorePropertyModificationsFor: ['state', 'config']
+        ignorePropertyModificationsFor: ['state', 'config', 'item']
       }
     ]
   },

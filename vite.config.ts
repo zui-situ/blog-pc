@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 // 如果编辑器提示 path 模块找不到，则可以安装一下 @types/node -> npm i @types/node -D
 import { resolve } from 'path'
 
@@ -10,6 +11,7 @@ const mdPlugin = require('vite-plugin-markdown')
 export default defineConfig({
   plugins: [
     vue(),
+    VueSetupExtend(),
     // 按需载入 Element Plus
     styleImport({
       libs: [
@@ -39,17 +41,17 @@ export default defineConfig({
   server: {
     port: 4500, // 设置服务启动端口号
     open: true, // 设置服务启动时是否自动打开浏览器
-    cors: true // 允许跨域
+    cors: true, // 允许跨域
 
     // 设置代理，根据我们项目实际情况配置
-    // proxy: {
-    //   '/api': {
-    //     target: 'http://xxx.xxx.xxx.xxx:x000',
-    //     changeOrigin: true,
-    //     secure: false,
-    //     rewrite: (path) => path.replace('/api/', '/')
-    //   }
-    // },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3008/',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace('/api', '')
+      }
+    }
   },
   css: {
     // css预处理器
@@ -57,7 +59,7 @@ export default defineConfig({
       scss: {
         // 引入 var.scss 这样就可以在全局中使用 var.scss中预定义的变量了
         // 给导入的路径最后加上 ;
-        additionalData: `@import "./src/assets/style/variables.scss";`
+        // additionalData: `@import "./src/assets/style/variables.scss";`
       }
     }
   }
