@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import Test from '../src/views/search/index.vue'
+import search from '../views/index/index.vue'
 
-test('Test.vue', async () => {
-  const wrapper = mount(Test)
+test('index.vue', async () => {
+  const wrapper = mount(search)
   expect(wrapper.html()).toContain('Unit Test Page')
   expect(wrapper.html()).toContain('count is: 0')
   await wrapper.find('button').trigger('click')

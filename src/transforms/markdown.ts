@@ -156,6 +156,7 @@ marked.setOptions({
 
 export interface MarkdownRenderOption {
   sanitize?: boolean
+  relink?: boolean
   headingIDRenderer?: RendererGetterOption['headingID']
 }
 export const markdownToHTML = (markdown: string, options?: MarkdownRenderOption) => {

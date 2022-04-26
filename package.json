@@ -58,6 +58,7 @@
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@types/jest": "^26.0.22",
+    "@types/js-cookie": "^3.0.2",
     "@types/lodash": "^4.14.181",
     "@types/lozad": "^1.16.1",
     "@types/marked": "^4.0.3",
