@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import importUiFramework from '@/utils/import-ui-framework'
+// import importUiFramework from '@/utils/import-ui-framework'
 import router from '@/router/index'
 import store from '@/stores'
 import App from './App.vue'
@@ -18,7 +18,7 @@ const meta = createMeta({
 exportLozadToGlobal()
 
 const app = createApp(App)
-importUiFramework(app)
+  // importUiFramework(app)
   .use(router)
   .use(store)
   .use(commonComponents)
