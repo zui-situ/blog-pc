@@ -26,17 +26,17 @@ export const menus: Array<MenuItem> = [
     icon: 'icon-server',
     name: CategoryName.BAKC_END,
     code: CategoryCode.BAKC_END
-  },
-  {
-    route: getCategoryRoute(CategoryCode.PROJECT),
-    icon: 'icon-project',
-    name: CategoryName.PROJECT,
-    code: CategoryCode.PROJECT
-  },
-  {
-    route: getCategoryRoute(CategoryCode.TALK),
-    icon: 'icon-history',
-    name: CategoryName.TALK,
-    code: CategoryCode.TALK
   }
+  // {
+  //   route: getCategoryRoute(CategoryCode.PROJECT),
+  //   icon: 'icon-project',
+  //   name: CategoryName.PROJECT,
+  //   code: CategoryCode.PROJECT
+  // },
+  // {
+  //   route: getCategoryRoute(CategoryCode.TALK),
+  //   icon: 'icon-history',
+  //   name: CategoryName.TALK,
+  //   code: CategoryCode.TALK
+  // }
 ]
