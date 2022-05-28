@@ -12,12 +12,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: RouteName.Home,
-    component: import('@/views/index/index.vue')
+    component: () => import('@/views/index/index.vue')
   },
   {
     path: '/article/:id',
     name: RouteName.ArticleDetail,
-    component: import('@/views/articleDetail/index.vue')
+    component: () => import('@/views/articleDetail/index.vue')
   },
   {
     path: '/tag/:tag_name',
@@ -27,7 +27,7 @@ const routes: Array<RouteRecordRaw> = [
         tagName: to.params.tag_name
       }
     },
-    component: import('@/views/tag/index.vue')
+    component: () => import('@/views/tag/index.vue')
   },
   {
     path: '/category/:category_code',
@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
         categoryCode: to.params.category_code
       }
     },
-    component: import('@/views/category/index.vue')
+    component: () => import('@/views/category/index.vue')
   },
   {
     path: '/search/:keyword',
@@ -47,7 +47,7 @@ const routes: Array<RouteRecordRaw> = [
         keyword: to.params.keyword
       }
     },
-    component: import('@/views/search/index.vue')
+    component: import('@/views/category/index.vue')
   }
 ]
 

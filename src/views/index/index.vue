@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup name="home">
 import { onBeforeMount } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useArticleStore } from '@/stores/article'

@@ -9,7 +9,7 @@
         <!-- unuse suspense -> async route component -> can't extract style to css file -->
         <router-view v-slot="{ Component, route }">
           <div class="router-view">
-            <transition name="page" mode="out-in">
+            <transition name="fade" mode="out-in">
               <suspense>
                 <component :is="Component" :key="route.name" />
               </suspense>
@@ -22,24 +22,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import Background from './background.vue'
 import NavView from './nav.vue'
 import AsideView from './aside/index.vue'
 import HeaderView from './header.vue'
 import FooterView from './footer.vue'
-
-export default defineComponent({
-  name: 'DesktopMain',
-  components: {
-    Background,
-    HeaderView,
-    FooterView,
-    AsideView,
-    NavView
-  }
-})
 </script>
 
 <style lang="scss" scoped>
