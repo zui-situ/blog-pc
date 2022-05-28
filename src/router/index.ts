@@ -47,7 +47,7 @@ const routes: Array<RouteRecordRaw> = [
         keyword: to.params.keyword
       }
     },
-    component: import('@/views/category/index.vue')
+    component: () => import('@/views/category/index.vue')
   }
 ]
 
