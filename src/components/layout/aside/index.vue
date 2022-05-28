@@ -1,12 +1,9 @@
 <template>
-  <aside class="desktop-aside" ref="element">
+  <aside class="desktop-aside">
     <div class="module">
       <aside-search />
     </div>
-    <!-- <div class="module">
-      <aside-tag />
-    </div> -->
-    <div :id="ASIDE_STICKY_ELEMENT_ID" class="aside-sticky-box">
+    <div class="aside-sticky-box">
       <div class="module">
         <client-only v-if="isArticlePage">
           <aside-anchor class="sticky-module" />
@@ -18,18 +15,16 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import AsideTag from './tag.vue'
 import AsideSearch from './search.vue'
 import AsideAnchor from './anchor.vue'
 import { isArticleDetail } from '@/transforms/route'
 // import AsideArticle from './article.vue'
-const ASIDE_STICKY_ELEMENT_ID = 'aside-sticky-module'
+// const ASIDE_STICKY_ELEMENT_ID = 'aside-sticky-module'
 const route = useRoute()
 const isArticlePage = computed(() => isArticleDetail(route.name))
-
-onMounted(() => {})
 </script>
 
 <style lang="scss" scoped>
